@@ -69,11 +69,11 @@ public class ComplexityExamples {
         // инициализация переменных
         // проверяем скорость работы для массивов разного размера
         int[] arr1 = fillList(100_000);
-        int[] arr2 = fillList(200_000);
-        int[] arr3 = fillList(300_000);
-        int[] arr4 = fillList(400_000);
-        int[] arr5 = fillList(500_000);
-        int[] arr6 = fillList(600_000);
+        int[] arr2 = fillList(1_000_000);
+        int[] arr3 = fillList(10_000_000);
+        int[] arr4 = fillList(50_000_000);
+        int[] arr5 = fillList(100_000_000);
+        int[] arr6 = fillList(1_000_000_000);
 
         // начало первой операции в наносекундах от 1.01.1970 (? уточнить)
         long startTime1 = System.nanoTime();
@@ -101,11 +101,11 @@ public class ComplexityExamples {
         long finishTime6 = System.nanoTime() - startTime6;
 
         System.out.println("время в нс на поиск элемента в массиве arr1, состоящем из 100_000 элементов = " + finishTime1);
-        System.out.println("время в нс на поиск элемента в массиве arr2, состоящем из 200_000 элементов = " + finishTime2);
-        System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 300_000 элементов = " + finishTime3);
-        System.out.println("время в нс на поиск элемента в массиве arr4, состоящем из 400_000 элементов = " + finishTime4);
-        System.out.println("время в нс на поиск элемента в массиве arr5, состоящем из 500_000 элементов = " + finishTime5);
-        System.out.println("время в нс на поиск элемента в массиве arr6, состоящем из 600_000 элементов = " + finishTime6);
+        System.out.println("время в нс на поиск элемента в массиве arr2, состоящем из 1_000_000 элементов = " + finishTime2);
+        System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 10_000_000 элементов = " + finishTime3);
+        System.out.println("время в нс на поиск элемента в массиве arr4, состоящем из 50_000_000 элементов = " + finishTime4);
+        System.out.println("время в нс на поиск элемента в массиве arr5, состоящем из 100_000_000 элементов = " + finishTime5);
+        System.out.println("время в нс на поиск элемента в массиве arr6, состоящем из 1_000_000_000 элементов = " + finishTime6);
     }
 
     // Метод 1: Прямой доступ к элементу массива
