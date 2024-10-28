@@ -15,7 +15,8 @@ public class ComplexityExamples {
 
 
     public static void main(String[] args) {
-
+        //checkO1();
+        checkO2();
     }
 
     // проверка константного big-O (O(1))
