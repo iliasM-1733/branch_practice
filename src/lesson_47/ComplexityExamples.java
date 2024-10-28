@@ -20,11 +20,6 @@ public class ComplexityExamples {
         int[] arr2 = fillList(200_000);
         int[] arr3 = fillList(300_000);
 
-        // переменные, которые будут хранить время выполнения данных операций
-        long time1;
-        long time2;
-        long time3;
-
         // начало первой операции в наносекундах от 1.01.1970 (? уточнить)
         long startTime1 = System.nanoTime();
         getElement(arr1, 34_567);
