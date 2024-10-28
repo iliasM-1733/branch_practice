@@ -66,6 +66,10 @@ public class ComplexityExamples {
         System.out.println(binarySearch(fillList(1000_000), -88));
         System.out.println("size = 1_000_000, counter = " + counter);
 
+        counter = 0;
+        System.out.println(binarySearch(fillList(2000_000), -88));
+        System.out.println("size = 2_000_000, counter = " + counter);
+
     }
 
     // проверка константного big-O (O(1))
@@ -200,13 +204,17 @@ public class ComplexityExamples {
     }
 
     // Метод 5: Бинарный поиск
-
+    // O(ln N)
     public static int binarySearch(int[] array, int target) {
         return binarySearch(array, target, 0, array.length - 1);
     }
 
 
-
+//              7
+//         /        \
+//        3         12              -> сложность поиска логарифмическая O(LogN)
+//    /      \    /      \
+//   2       5    9       15
 
 
     private static int binarySearch(int[] array, int target, int low, int high) {
