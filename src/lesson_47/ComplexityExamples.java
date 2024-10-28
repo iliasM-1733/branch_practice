@@ -13,7 +13,13 @@ public class ComplexityExamples {
         return arr;
     }
 
+
     public static void main(String[] args) {
+
+    }
+
+    // проверка константного big-O (O(1))
+    public static void checkO1() {
         // инициализация переменных
         // проверяем скорость работы для массивов разного размера
         int[] arr1 = fillList(100_000);
@@ -22,11 +28,6 @@ public class ComplexityExamples {
         int[] arr4 = fillList(400_000);
         int[] arr5 = fillList(500_000);
         int[] arr6 = fillList(600_000);
-
-        // переменные, которые будут хранить время выполнения данных операций
-        long time1;
-        long time2;
-        long time3;
 
         // начало первой операции в наносекундах от 1.01.1970 (? уточнить)
         long startTime1 = System.nanoTime();
