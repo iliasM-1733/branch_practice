@@ -63,10 +63,56 @@ public class ComplexityExamples {
 
     }
 
+    // проверка константного big-O (O(1))
+    public static void checkO2() {
+        // инициализация переменных
+        // проверяем скорость работы для массивов разного размера
+        int[] arr1 = fillList(100_000);
+        int[] arr2 = fillList(200_000);
+        int[] arr3 = fillList(300_000);
+        int[] arr4 = fillList(400_000);
+        int[] arr5 = fillList(500_000);
+        int[] arr6 = fillList(600_000);
+
+        // начало первой операции в наносекундах от 1.01.1970 (? уточнить)
+        long startTime1 = System.nanoTime();
+        linearSearch(arr1, -1);
+        long finishTime1 = System.nanoTime() - startTime1;
+
+        long startTime2 = System.nanoTime();
+        linearSearch(arr2, -1);
+        long finishTime2 = System.nanoTime() - startTime2;
+
+        long startTime3 = System.nanoTime();
+        linearSearch(arr3, -1);
+        long finishTime3 = System.nanoTime() - startTime3;
+
+        long startTime4 = System.nanoTime();
+        linearSearch(arr4, -1);
+        long finishTime4 = System.nanoTime() - startTime4;
+
+        long startTime5 = System.nanoTime();
+        linearSearch(arr5, -1);
+        long finishTime5 = System.nanoTime() - startTime5;
+
+        long startTime6 = System.nanoTime();
+        linearSearch(arr6, -1);
+        long finishTime6 = System.nanoTime() - startTime6;
+
+        System.out.println("время в нс на поиск элемента в массиве arr1, состоящем из 100_000 элементов = " + finishTime1);
+        System.out.println("время в нс на поиск элемента в массиве arr2, состоящем из 200_000 элементов = " + finishTime2);
+        System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 300_000 элементов = " + finishTime3);
+        System.out.println("время в нс на поиск элемента в массиве arr4, состоящем из 400_000 элементов = " + finishTime4);
+        System.out.println("время в нс на поиск элемента в массиве arr5, состоящем из 500_000 элементов = " + finishTime5);
+        System.out.println("время в нс на поиск элемента в массиве arr6, состоящем из 600_000 элементов = " + finishTime6);
+    }
+
     // Метод 1: Прямой доступ к элементу массива
     public static int getElement(int[] array, int index) {
         return array[index];
     }
+
+
 
     // Метод 2: Линейный поиск
     public static int linearSearch(int[] array, int target) {
