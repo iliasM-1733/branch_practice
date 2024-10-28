@@ -68,7 +68,7 @@ public class ComplexityExamples {
 
         counter = 0;
         System.out.println(binarySearch(fillList(2000_000), -88));
-        System.out.println("size = 1_000_000, counter = " + counter);
+        System.out.println("size = 2_000_000, counter = " + counter);
 
     }
 
