@@ -19,6 +19,9 @@ public class ComplexityExamples {
         int[] arr1 = fillList(100_000);
         int[] arr2 = fillList(200_000);
         int[] arr3 = fillList(300_000);
+        int[] arr4 = fillList(400_000);
+        int[] arr5 = fillList(500_000);
+        int[] arr6 = fillList(600_000);
 
         // переменные, которые будут хранить время выполнения данных операций
         long time1;
@@ -38,8 +41,23 @@ public class ComplexityExamples {
         getElement(arr3, 234_876);
         long finishTime3 = System.nanoTime() - startTime3;
 
+        long startTime4 = System.nanoTime();
+        getElement(arr4, 234_876);
+        long finishTime4 = System.nanoTime() - startTime4;
+
+        long startTime5 = System.nanoTime();
+        getElement(arr5, 234_876);
+        long finishTime5 = System.nanoTime() - startTime5;
+
+        long startTime6 = System.nanoTime();
+        getElement(arr6, 23_423_234_876L);
+        long finishTime6 = System.nanoTime() - startTime6;
+
         System.out.println("время в нс на поиск элемента в массиве arr1, состоящем из 100_000 элементов = " + finishTime1);
         System.out.println("время в нс на поиск элемента в массиве arr2, состоящем из 200_000 элементов = " + finishTime2);
+        System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 300_000 элементов = " + finishTime3);
+        System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 300_000 элементов = " + finishTime3);
+        System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 300_000 элементов = " + finishTime3);
         System.out.println("время в нс на поиск элемента в массиве arr3, состоящем из 300_000 элементов = " + finishTime3);
 
     }
