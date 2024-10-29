@@ -82,7 +82,7 @@ public class ComplexityExamples {
         int[] arr4 = fillList(400_000);
         int[] arr5 = fillList(500_000);
         int[] arr6 = fillList(600_000);
-
+        int[] arr = fillList(700_000);
         // начало первой операции в наносекундах от 1.01.1970 (? уточнить)
         long startTime1 = System.nanoTime();
         getElement(arr1, 34_567);
