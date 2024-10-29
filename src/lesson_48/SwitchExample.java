@@ -1,12 +1,11 @@
 package lesson_48;
 
 import java.time.DayOfWeek;
-import java.util.Spliterator;
 
 public class SwitchExample {
     public static void main(String[] args) {
-        useSwitch(DayOfWeek.TUESDAY);
-        useIfElse(DayOfWeek.TUESDAY);
+        useSwitch(DayOfWeek.SUNDAY);
+        useIfElse(DayOfWeek.SUNDAY);
     }
 
     private static void useSwitch(DayOfWeek day) {
@@ -51,9 +50,14 @@ public class SwitchExample {
             System.out.println("Сегодня воскресенье");
         }
 
+        double temperature = 28.3;
+
+        if (temperature >= 26.0) {
+            // логика включени кондиционера
+        } else if (temperature < 20) {
+            // логика включения обогревателя
         }
+
+
     }
-
-
-
-
+}
