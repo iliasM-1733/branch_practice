@@ -57,5 +57,7 @@ public class SwitchExample {
         } else if (temperature < 20) {
             // логика включения обогревателя
         }
+
+
     }
 }
