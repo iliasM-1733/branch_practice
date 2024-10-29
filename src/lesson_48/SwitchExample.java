@@ -1,6 +1,7 @@
 package lesson_48;
 
 import java.time.DayOfWeek;
+import java.util.Spliterator;
 
 public class SwitchExample {
     public static void main(String[] args) {
@@ -49,5 +50,10 @@ public class SwitchExample {
         } else if (day == DayOfWeek.SUNDAY) {
             System.out.println("Сегодня воскресенье");
         }
+
+        }
     }
+
+
+
 }
