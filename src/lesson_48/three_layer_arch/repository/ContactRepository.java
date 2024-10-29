@@ -14,19 +14,19 @@ public class ContactRepository {
         this.map = new HashMap<>();
     }
 
+    public boolean removeContact(int id) {
+        if (!map.containsKey(id)) {
+            return false;
+        }
+        map.remove(id);
+        return true;
+    }
+
     public boolean addContact(Contact contact) {
         if (map.containsKey(contact.getId())) {
             return false;
         }
         map.put(contact.getId(), contact);
-        return true;
-    }
-
-    public boolean removeContact(Contact contact) {
-        if (!map.containsKey(contact.getId())) {
-            return false;
-        }
-        map.remove(contact.getId());
         return true;
     }
 
@@ -40,6 +40,7 @@ public class ContactRepository {
 
 
     //todo: доработать логику, чтобы искать можно было по части имени и возвращать список контактов
+    // перенести в сервис?
     public Contact getContactByName(String name) {
         // чтобы итерироваться по мапе мы можем получить список всех ключей из жтой мапы:
         Set<Integer> keyset = map.keySet();
