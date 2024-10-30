@@ -1,0 +1,36 @@
+1. 29 октября 2024 года.
+Практика трехслойной архитектуры.
+
+Приложение "Телефонная книга".
+
+I (Business Logic Layer)
+функционал (слой бизнес-логики(Business Logic Layer)):
+ * CRUD - create, read, update, delete
+ - создание записи
+ - чтение записи
+ - редактирование записи
+ - удаление записи
+
+    Модели (объекты):
+    1. контакт (класс)
+        Поля:
+         - String name
+         - String phoneNumber
+         - String dateOfCreation (?)
+
+II  (Data Access Layer)
+Слой хранения данных (репозиторий):
+класс-хранилище, который имеет поле:
+ - private Map <name, Contact>
+
+взаимодействие с этим классом будет
+осуществляться исключительно через public/protected методы,
+чтобы не было прямого доступа к Map.
+
+III  (Presentation Layer)
+Scanner
+
+
+
+
+
