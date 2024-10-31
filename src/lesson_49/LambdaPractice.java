@@ -1,6 +1,13 @@
 package lesson_49;
 
+import java.io.File;
+import java.util.function.Function;
+
 public class LambdaPractice {
+    // подсказки по управлению IntellijIdea:
+    // shift + shift -> быстрое окно поиска
+    // mac command (win cntrl) + курсор на тип данных и левой кнопкой клик -> переход к этому классу
+
     public static void main(String[] args) {
         System.out.println("Пример использования функционального интерфейса без аргументов");
 
@@ -71,6 +78,7 @@ public class LambdaPractice {
             for (int i = 0; i < a; i++) {
                 System.out.print(b);
             }
+            System.out.println();
         });
         // (a, b) -> равноценно вот такой записи:
         /*
@@ -88,12 +96,24 @@ public class LambdaPractice {
         // тк это просто "экземпляры"функционального интерфейса MyFunctionalWithArguments у каждого из которых
         // своя собственная реализация абстрактного метода, без корректного вызова метода methodWithArguments
         // результат мы не получим
-        functionalWithArguments1.methodWithArguments(10, 15);
+        functionalWithArguments1.methodWithArguments(10, 2);
         functionalWithArguments2.methodWithArguments(3, -2);
         functionalWithArguments2.methodWithArguments(33, 8);
 
+        //один из стандартных функциональных интерфейсов Java
+        // тк Function - дефолтный, уже определенный в джава функциональный интерфейс,
+        // который принимает в качестве аргумента один (любой) тип данных (T t), а возвращает другой (R) (любой другой),
+        // то хорошей практикой будет определить их перед использованием Function ->
+        // Function<T, R> -> Function<String, File>
+        // также, тк Function - это слишком общий функциональный интерфейс, хорошей практикой будет дать
+        // "говорящее", осмымсленное название переменной
+        Function<String, File> fileCreatorByPath = (path) -> {
+            // тк Function имеет лишь один абстрактный метод:
+            // R apply(T t);
+            // после реализации мы обязаны вернуть переменную типа данных (R), которую мы определили при создании
+            // экземпляра Function, в нашем случае это переменная типа File.
 
-
-
+            return new File(path);
+        };
     }
 }
