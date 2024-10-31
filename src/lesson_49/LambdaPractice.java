@@ -107,6 +107,7 @@ public class LambdaPractice {
         // Function<T, R> -> Function<String, File>
         // также, тк Function - это слишком общий функциональный интерфейс, хорошей практикой будет дать
         // "говорящее", осмымсленное название переменной
+
         Function<String, File> fileCreatorByPath = (path) -> {
             // тк Function имеет лишь один абстрактный метод:
             // R apply(T t);
@@ -115,5 +116,19 @@ public class LambdaPractice {
 
             return new File(path);
         };
+
+        // использование только что реализованного лямбда выражение довольно простое, также,
+        // как если бы это была переменная обычного класса:
+        File file = fileCreatorByPath.apply("/path/to/file");
+
+        // я могу так сделать, потому что переопределил этот метод apply, как:
+        /*
+        public class fileCreatorByPath implements Function {
+            @Override
+            public File apply(String path) {
+                return new File(path);
+            }
+        }
+         */
     }
 }
