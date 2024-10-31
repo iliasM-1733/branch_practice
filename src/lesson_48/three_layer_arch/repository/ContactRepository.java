@@ -60,6 +60,10 @@ public class ContactRepository {
 
     public Set<Contact> getContactByName(String name) {
 
+        // 1. создать Set который мы вернем
+        // 2. перебирать все контакты в мапе
+        // 3. сравнивать содержит ли имя из контакта в мапе name, если содержит, то положить в сет
+        // 4. по окончанию перебора вернуть сет с контактами
         return null;
     }
 
