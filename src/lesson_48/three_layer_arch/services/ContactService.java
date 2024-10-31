@@ -3,6 +3,8 @@ package lesson_48.three_layer_arch.services;
 import lesson_48.three_layer_arch.models.Contact;
 import lesson_48.three_layer_arch.repository.ContactRepository;
 
+import java.util.Set;
+
 public class ContactService {
     private ContactRepository repository;
     private static int contactCounter = 0;
@@ -33,16 +35,16 @@ public class ContactService {
 
     // методы для обновления контакта, получения контакта, удаления контакта.
 
-    public String removeContact(String name) {
-        Contact contact = repository.getContactByName(name);
-        if (contact == null) {
+    public String getContact(String name) {
+        Set<Contact> contacts = repository.getContactByName(name);
+        if (contacts.size() == 0) {
             return "контакт с таким именем не был найден";
         } else {
-            if (repository.removeContact(contact.getId())) {
-                return "контакт был успешно удален";
-            } else {
-                return "контакт не был удален";
+            StringBuilder result = new StringBuilder();
+            for (Contact contact : contacts) {
+                result.append(contact.toString()).append("; ");
             }
+            return result.toString();
         }
     }
 }
