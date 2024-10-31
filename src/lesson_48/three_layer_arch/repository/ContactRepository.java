@@ -3,6 +3,7 @@ package lesson_48.three_layer_arch.repository;
 import lesson_48.three_layer_arch.models.Contact;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,10 +39,9 @@ public class ContactRepository {
         return true;
     }
 
-
     //todo: доработать логику, чтобы искать можно было по части имени и возвращать список контактов
     // перенести в сервис?
-    public Contact getContactByName(String name) {
+    public Contact getContactByNameDEPRICATED(String name) {
         // чтобы итерироваться по мапе мы можем получить список всех ключей из жтой мапы:
         Set<Integer> keyset = map.keySet();
 
@@ -57,6 +57,12 @@ public class ContactRepository {
         }
         return null;
     }
+
+    public Set<Contact> getContactByName(String name) {
+
+        return null;
+    }
+
 
     public Contact getContactByPhone(String phone) {
         //...
