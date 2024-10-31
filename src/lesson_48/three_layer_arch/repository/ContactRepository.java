@@ -2,9 +2,7 @@ package lesson_48.three_layer_arch.repository;
 
 import lesson_48.three_layer_arch.models.Contact;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ContactRepository {
     // ключ - id, значение - Contact
@@ -58,8 +56,25 @@ public class ContactRepository {
         return null;
     }
 
+
+
+
+    public List<Contact> getContactByNamePart(String namePart) {
+        List<Contact> matchingContacts = new ArrayList<>();
+        for (Contact contact : map.values()) {
+            if (contact.getName().toLowerCase().contains(namePart.toLowerCase())) {
+                matchingContacts.add(contact);
+
+            }
+        }
+        return matchingContacts;
+    }
     public Contact getContactByPhone(String phone) {
-        //...
+        for(Contact contact:map.values()){
+            if(contact.getPhoneNumber().equals(phone)){
+                return contact;
+            }
+        }
         return null;
     }
 }
