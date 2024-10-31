@@ -2,10 +2,7 @@ package lesson_48.three_layer_arch.repository;
 
 import lesson_48.three_layer_arch.models.Contact;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ContactRepository {
     // ключ - id, значение - Contact
@@ -59,8 +56,14 @@ public class ContactRepository {
     }
 
     public Set<Contact> getContactByName(String name) {
-
-        return null;
+        Set<Contact> contacts = new HashSet<>();
+        Set<Integer> keySet = map.keySet();
+        for (Integer key : keySet){
+            if (map.get(key).getName().contains(name)){
+                contacts.add(map.get(key));
+            }
+        }
+        return contacts;
     }
 
 
