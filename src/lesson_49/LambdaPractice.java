@@ -71,6 +71,7 @@ public class LambdaPractice {
             for (int i = 0; i < a; i++) {
                 System.out.print(b);
             }
+            System.out.println();
         });
         // (a, b) -> равноценно вот такой записи:
         /*
@@ -88,12 +89,8 @@ public class LambdaPractice {
         // тк это просто "экземпляры"функционального интерфейса MyFunctionalWithArguments у каждого из которых
         // своя собственная реализация абстрактного метода, без корректного вызова метода methodWithArguments
         // результат мы не получим
-        functionalWithArguments1.methodWithArguments(10, 15);
+        functionalWithArguments1.methodWithArguments(10, 2);
         functionalWithArguments2.methodWithArguments(3, -2);
         functionalWithArguments2.methodWithArguments(33, 8);
-
-
-
-
     }
 }
