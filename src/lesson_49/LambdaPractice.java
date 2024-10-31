@@ -44,7 +44,8 @@ public class LambdaPractice {
         }
          */
 
+        functional1.someMethod();
+        functional2.someMethod();
+        functional3.someMethod();
     }
-
-
 }
