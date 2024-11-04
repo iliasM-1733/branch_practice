@@ -59,7 +59,7 @@ public class ContactRepository {
         Set<Contact> contacts = new HashSet<>();
         Set<Integer> keySet = map.keySet();
         for (Integer key : keySet){
-            if (map.get(key).getName().contains(name)){
+            if (map.get(key).getName().toLowerCase().contains(name.toLowerCase().trim())){
                 contacts.add(map.get(key));
             }
         }
