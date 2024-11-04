@@ -1,6 +1,9 @@
 package lesson_49;
 
 import java.io.File;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Queue;
 import java.util.function.Function;
 
 public class LambdaPractice {
@@ -130,5 +133,109 @@ public class LambdaPractice {
             }
         }
          */
+    }
+
+    public static void exampleOfAbstractClasses() {
+
+        // myQueue - абстрактный класс. Это выражается в том, что объект myQueue -
+        // является объектом интерфейса Queue, но тк мы не можем использовать интерфейсы без реализации,
+        // в данном примере был использован прием с реализацией через "абстрактный класс". Это актуально, когда
+        // нужен лишь один экземпляр с конкретной реализацией интерфейса, далее он использоваться не будет.
+        // В этом случае все еще необходимо написать реализацию все абстрактны методов интерфейса,
+        // но они реализуются не в отдельном классе, а в фигурных скобках, как показано ниже.
+        // Таким образом переменная "myQueue" - является единственной, некой специфической реализацией интерфейса Queue,
+        // но при этом не является экземпляром какого-либо класса. По этой причине,
+        // такая реализация называется "абстрактным классом". Самая частая реализация - объекты Runnable и Executable
+        Queue<String> myQueue = new Queue<String>() {
+            @Override
+            public boolean add(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean offer(String s) {
+                return false;
+            }
+
+            @Override
+            public String remove() {
+                return "";
+            }
+
+            @Override
+            public String poll() {
+                return "";
+            }
+
+            @Override
+            public String element() {
+                return "";
+            }
+
+            @Override
+            public String peek() {
+                return "";
+            }
+
+            @Override
+            public int size() {
+                return 0;
+            }
+
+            @Override
+            public boolean isEmpty() {
+                return false;
+            }
+
+            @Override
+            public boolean contains(Object o) {
+                return false;
+            }
+
+            @Override
+            public Iterator<String> iterator() {
+                return null;
+            }
+
+            @Override
+            public Object[] toArray() {
+                return new Object[0];
+            }
+
+            @Override
+            public <T> T[] toArray(T[] a) {
+                return null;
+            }
+
+            @Override
+            public boolean remove(Object o) {
+                return false;
+            }
+
+            @Override
+            public boolean containsAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean addAll(Collection<? extends String> c) {
+                return false;
+            }
+
+            @Override
+            public boolean removeAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean retainAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public void clear() {
+
+            }
+        };
     }
 }
