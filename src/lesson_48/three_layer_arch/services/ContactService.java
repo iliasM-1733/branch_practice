@@ -13,6 +13,9 @@ public class ContactService {
     }
 
     public String addContact(String name, String phoneNumber) {
+        // можно дописать некую логику проверки, что такого телефона нет в контактах
+        // или, что данные не пусты и введены корректно
+
         Contact contact = new Contact(contactCounter, name, phoneNumber);
         contactCounter++;
         if (repository.addContact(contact)) {
