@@ -39,7 +39,13 @@ public class ContactBookFront {
                     }
                 }
                 else if (codeNum == 1) {
-
+                    addContact(scanner, service);
+                }
+                else if (codeNum == 2) {}
+                else if (codeNum == 3) {}
+                else if (codeNum == 4) {}
+                else {
+                    System.out.println("Такого кода пока нет в системе. Попробуйте еще раз");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Пожалуйста, введите число, соответствующее операции от 0 до 4");
