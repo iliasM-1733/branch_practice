@@ -8,7 +8,6 @@ import java.util.Set;
 public class ContactService {
     private ContactRepository repository;
     private static int contactCounter = 0;
-
     public ContactService() {
         repository = new ContactRepository();
     }
