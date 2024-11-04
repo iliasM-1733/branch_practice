@@ -2,7 +2,6 @@ package lesson_48.three_layer_arch.repository;
 
 import lesson_48.three_layer_arch.models.Contact;
 
-import java.util.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -10,33 +9,33 @@ import java.util.Set;
 
 public class ContactRepository {
     // ключ - id, значение - Contact
-    private Map<Integer, Contact> map;
+    private Map<Integer, Contact> contactMap;
 
     public ContactRepository() {
-        this.map = new HashMap<>();
+        this.contactMap = new HashMap<>();
     }
 
     public boolean removeContact(int id) {
-        if (!map.containsKey(id)) {
+        if (!contactMap.containsKey(id)) {
             return false;
         }
-        map.remove(id);
+        contactMap.remove(id);
         return true;
     }
 
     public boolean addContact(Contact contact) {
-        if (map.containsKey(contact.getId())) {
+        if (contactMap.containsKey(contact.getId())) {
             return false;
         }
-        map.put(contact.getId(), contact);
+        contactMap.put(contact.getId(), contact);
         return true;
     }
 
     public boolean updateContact(Contact contact) {
-        if (!map.containsKey(contact.getId())) {
+        if (!contactMap.containsKey(contact.getId())) {
             return false;
         }
-        map.put(contact.getId(), contact);
+        contactMap.put(contact.getId(), contact);
         return true;
     }
 
@@ -44,11 +43,11 @@ public class ContactRepository {
     // перенести в сервис?
     public Contact getContactByNameDEPRICATED(String name) {
         // чтобы итерироваться по мапе мы можем получить список всех ключей из жтой мапы:
-        Set<Integer> keyset = map.keySet();
+        Set<Integer> keyset = contactMap.keySet();
 
         // перебираем все ключи и сравниваем имена полученных значений с тем, которое пришло в аргументе:
         for (Integer key : keyset) {
-            Contact contactValue = map.get(key);
+            Contact contactValue = contactMap.get(key);
             String potentialName = contactValue.getName();
 
             // если имя из полученного контакта совпадает с именем из аргумента, то возвращаем контакт целиком:
@@ -60,13 +59,23 @@ public class ContactRepository {
     }
 
     public Set<Contact> getContactByName(String name) {
-        Set<Contact> contacts = new HashSet<>();
-        Set<Integer> keySet = map.keySet();
-        for (Integer key : keySet){
-            if (map.get(key).getName().toLowerCase().contains(name.toLowerCase().trim())){
-                contacts.add(map.get(key));
+        Set<Contact>  contacts = new HashSet<>();
+        Set<Integer> keyset = contactMap.keySet();
+
+        // перебираем все ключи и сравниваем имена полученных значений с тем, которое пришло в аргументе:
+        for (Integer key : keyset) {
+            Contact contactValue = contactMap.get(key); //
+            String potentialName = contactValue.getName();
+
+            if (potentialName.toLowerCase().contains(name.toLowerCase().trim())) {
+                contacts.add(contactValue);
             }
         }
+
+        // 1. создать Set который мы вернем
+        // 2. перебирать все контакты в мапе
+        // 3. сравнивать содержит ли имя из контакта в мапе name, если содержит, то положить в сет
+        // 4. по окончанию перебора вернуть сет с контактами
         return contacts;
     }
 

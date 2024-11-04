@@ -47,4 +47,19 @@ public class ContactService {
             return result.toString();
         }
     }
+
+    //
+    public Set deleteContact(String name) {
+        Set<Contact> contacts = repository.getContactByName(name);
+        if (contacts.isEmpty()) {
+            return null;
+        } else if (contacts.size() > 1) {
+            return contacts;
+        } else {
+            for (Contact contact : contacts) {
+                repository.removeContact(contact.getId());
+            }
+            return contacts;
+        }
+    }
 }
