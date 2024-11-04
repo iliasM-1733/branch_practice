@@ -60,7 +60,6 @@ public class ContactRepository {
 
     public Set<Contact> getContactByName(String name) {
         Set<Contact>  contacts = new HashSet<>();
-
         Set<Integer> keyset = contactMap.keySet();
 
         // перебираем все ключи и сравниваем имена полученных значений с тем, которое пришло в аргументе:
@@ -80,10 +79,9 @@ public class ContactRepository {
         return contacts;
     }
 
-    //todo: реализовать метод аналогичный getContactByName, который собирает контакты по номеру телефона или части,
-    // игнорируя спец символы вроде "-" или "+", также следует игнорировать первый символ/два символа - код страны
-    public Set<Contact> getContactByPhoneNumber(String number) {
-        // logic
+
+    public Contact getContactByPhone(String phone) {
+        //...
         return null;
     }
 }

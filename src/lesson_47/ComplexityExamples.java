@@ -16,7 +16,6 @@ public class ComplexityExamples {
         return arr;
     }
 
-
     public static void main(String[] args) {
         //checkO1();
         //checkO2();

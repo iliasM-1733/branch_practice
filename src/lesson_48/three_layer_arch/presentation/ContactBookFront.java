@@ -1,8 +1,10 @@
 package lesson_48.three_layer_arch.presentation;
 
+import lesson_48.three_layer_arch.models.Contact;
 import lesson_48.three_layer_arch.services.ContactService;
 
 import java.util.Scanner;
+import java.util.Set;
 
 public class ContactBookFront {
     public static void main(String[] args) {
@@ -43,7 +45,9 @@ public class ContactBookFront {
                 }
                 else if (codeNum == 2) {}
                 else if (codeNum == 3) {}
-                else if (codeNum == 4) {}
+                else if (codeNum == 4) {
+                    findContact(scanner, service);
+                }
                 else {
                     System.out.println("Такого кода пока нет в системе. Попробуйте еще раз");
                 }
@@ -76,5 +80,23 @@ public class ContactBookFront {
         } catch (NumberFormatException e) {
             System.out.println("Вы ввели некорректное значение, вы будете возвращены в основное меню");
         }
+    }
+
+    public static void findContact(Scanner scanner, ContactService service){
+        System.out.println("Пожалуйста, введите имя для поиска контакта.");
+
+        String name = scanner.nextLine();
+
+        Set<Contact> foundName = service.getContact(name);
+
+        if (foundName == null){
+            System.out.println("Такого контакта нет в записной книжке.");
+        } else {
+            System.out.println("Найдено контактов: " + foundName.size());
+            for (Contact contact : foundName) {
+                System.out.println("Имя: " + contact.getName() + ", номер телефона: " + contact.getPhoneNumber());
+            }
+        }
+
     }
 }

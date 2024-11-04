@@ -37,16 +37,12 @@ public class ContactService {
 
     // методы для обновления контакта, получения контакта, удаления контакта.
 
-    public String getContact(String name) {
+    public Set<Contact> getContact(String name) {
         Set<Contact> contacts = repository.getContactByName(name);
         if (contacts.size() == 0) {
-            return "контакт с таким именем не был найден";
+            return null;
         } else {
-            StringBuilder result = new StringBuilder();
-            for (Contact contact : contacts) {
-                result.append(contact.toString()).append("; ");
-            }
-            return result.toString();
+            return contacts;
         }
     }
 
