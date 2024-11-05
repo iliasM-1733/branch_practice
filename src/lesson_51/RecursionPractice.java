@@ -9,7 +9,7 @@ public class RecursionPractice {
 //        }
 
         System.out.println("============================");
-        x = Integer.MAX_VALUE;
+        x = 10;
         recursionCounter(x);
     }
 
@@ -37,6 +37,8 @@ public class RecursionPractice {
         }
         recursion(++i);
     }
+
+
 
 
 
