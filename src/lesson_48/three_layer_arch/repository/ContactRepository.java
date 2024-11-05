@@ -12,7 +12,7 @@ public class ContactRepository {
     private Map<Integer, Contact> contactMap;
 
     public ContactRepository() {
-        this.contactMap = new HashMap<>();
+        this.contactMap=new HashMap<>();
     }
 
     public boolean removeContact(int id) {
@@ -43,12 +43,12 @@ public class ContactRepository {
     // перенести в сервис?
     public Contact getContactByNameDEPRICATED(String name) {
         // чтобы итерироваться по мапе мы можем получить список всех ключей из жтой мапы:
-        Set<Integer> keyset = contactMap.keySet();
+        Set<Integer> keyset=contactMap.keySet();
 
         // перебираем все ключи и сравниваем имена полученных значений с тем, которое пришло в аргументе:
         for (Integer key : keyset) {
-            Contact contactValue = contactMap.get(key);
-            String potentialName = contactValue.getName();
+            Contact contactValue=contactMap.get(key);
+            String potentialName=contactValue.getName();
 
             // если имя из полученного контакта совпадает с именем из аргумента, то возвращаем контакт целиком:
             if (potentialName.equals(name)) {
@@ -59,13 +59,13 @@ public class ContactRepository {
     }
 
     public Set<Contact> getContactByName(String name) {
-        Set<Contact>  contacts = new HashSet<>();
-        Set<Integer> keyset = contactMap.keySet();
+        Set<Contact> contacts=new HashSet<>();
+        Set<Integer> keyset=contactMap.keySet();
 
         // перебираем все ключи и сравниваем имена полученных значений с тем, которое пришло в аргументе:
         for (Integer key : keyset) {
-            Contact contactValue = contactMap.get(key); //
-            String potentialName = contactValue.getName();
+            Contact contactValue=contactMap.get(key); //
+            String potentialName=contactValue.getName();
 
             if (potentialName.toLowerCase().contains(name.toLowerCase().trim())) {
                 contacts.add(contactValue);
@@ -83,5 +83,16 @@ public class ContactRepository {
     public Contact getContactByPhone(String phone) {
         //...
         return null;
+    }
+
+    public Set<Contact> getAllContacts() {
+        Set<Contact> allContacts=new HashSet<>();
+        Set<Integer> allKeys=contactMap.keySet();
+
+        for (Integer key : allKeys) {
+            Contact contact=contactMap.get(key);
+            allContacts.add(contact);
+        }
+        return allContacts;
     }
 }

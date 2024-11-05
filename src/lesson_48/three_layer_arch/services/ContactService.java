@@ -60,4 +60,9 @@ public class ContactService {
             return contacts;
         }
     }
+
+    public Set<Contact> getAllContacts(){
+        Set<Contact> allContacts= repository.getAllContacts();
+        return allContacts;
+    }
 }
