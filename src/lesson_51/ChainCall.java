@@ -46,6 +46,10 @@ public class ChainCall {
     public static void seven(int x) {
         System.out.println(x);
         x ++;
-        return;
+
+        // one(x); - пример кольцевой рекурсии, когда метод не вызывает сам себя,
+        // но вызывает метод, который в последствии вызовет его
+
+        return; // базовый случай
     }
 }
