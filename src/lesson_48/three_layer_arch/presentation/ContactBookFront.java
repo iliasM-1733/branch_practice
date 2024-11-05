@@ -13,6 +13,7 @@ public class ContactBookFront {
 
         boolean isWorking = true;
 
+        // todo: дописать логику отображения всех контактов
         while (isWorking) {
             System.out.println("Привет! Это приложение - записаня книжка. Тут пока не так много опций, но можно выбрать:" +
                     "\n 1. - добавить контакт" +
